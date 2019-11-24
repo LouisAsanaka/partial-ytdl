@@ -5,9 +5,13 @@ import random, string
 from pprint import pprint
 
 def subtract_time(start, end):
-    FMT = '%H:%M:%S'
+    FMT = '%H:%M:%S.%f'
+    if '.' not in start:
+        start += '.000'
+    if '.' not in end:
+        end += '.000'
     delta = datetime.strptime(end, FMT) - datetime.strptime(start, FMT)
-    return str(delta)
+    return str(delta)[:-3]
 
 url = input("Enter URL: ")
 start_time = input("Enter start time (in seconds, or in hh:mm:ss[.xxx] form): ")
