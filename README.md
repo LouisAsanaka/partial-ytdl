@@ -12,3 +12,4 @@ Installing
 Usage
 -----
 - Run the program with ```python main.py```
+- Alternatively, view the commandline arguments
